@@ -9,7 +9,7 @@ export class ProductsController{
     }
 
     async create(request:Request, response:Response){
-        const {product_name, price} = request.body
+        const { product_name, price } = request.body
 
         await knex("products").insert({product_name, price})
 
@@ -18,7 +18,7 @@ export class ProductsController{
 
     async update(request:Request, response:Response){
         const { id } = request.params
-        const {product_name, price } = request.body
+        const { product_name, price } = request.body
 
         await knex("products").update({product_name, price}).where({id})
 
